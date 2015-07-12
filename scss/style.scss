@@ -1,6 +1,28 @@
-body {
+$primaryColor: #FF0000;
+
+@mixin message {
   font-family: Verdana;
   font-size: 1.5em;
+}
+
+@mixin member {
+  float: left;
+  /*border: 1px solid gray;*/
+  margin: 10px;
+  padding: 6px;
+}
+
+@mixin team {
+  width: 200px;
+  height: 200px;
+}
+
+body {
+  @include message
+}
+
+h1 {
+    color: $primaryColor;
 }
 
 #team-members {
@@ -8,15 +30,11 @@ body {
 }
 
 #team-members .member {
-  float: left;
-  /*border: 1px solid gray;*/
-  margin: 10px;
-  padding: 6px;
+  @include member
 }
 
 #team-members .member img {
-  width: 200px;
-  height: 200px;
+  @include team
 }
 
 #team-members .member div.name {
